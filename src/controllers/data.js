@@ -1,0 +1,33 @@
+const data={
+  ipAddress: '192.168.1.66',
+  portNo: 8080,
+  protocol: 'HTTP',
+  macAddress: 'bc:5e:33:58:08:ff',
+  channelID: 1,
+  dateTime: '2025-06-19T15:33:07+05:30',
+  activePostCount: 1,
+  eventType: 'AccessControllerEvent',
+  eventState: 'active',
+  eventDescription: 'Access Controller Event',
+  AccessControllerEvent: {
+    deviceName: 'PorWOOSZW7L',
+    majorEventType: 5,
+    subEventType: 38,
+    name: 'Farhaan',
+    cardReaderKind: 1,
+    cardReaderNo: 1,
+    doorNo: 1,
+    verifyNo: 210,
+    employeeNoString: '98',
+    serialNo: 280,
+    userType: 'normal',
+    currentVerifyMode: 'faceOrFpOrCardOrPw',
+    frontSerialNo: 279,
+    attendanceStatus: 'undefined',
+    label: '',
+    statusValue: 0,
+    mask: 'unknown',
+    helmet: 'unknown',
+    purePwdVerifyEnable: true
+  }
+}

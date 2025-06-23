@@ -1,0 +1,7 @@
+{
+  "name": "Pos",
+  "script": "./src/app.js",
+  "env_production": {
+    "NODE_ENV": "production"
+  }
+}
