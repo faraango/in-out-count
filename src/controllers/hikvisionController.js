@@ -107,7 +107,7 @@ const verifyEvents = async (ctx) => {
       console.log("out device name", currentDeviceName);
     }
 
-    displayNumber();
+    displayNumber(get(formattedObject, "name"));
 
     ctx.body = "ok";
     ctx.response.status = HttpStatusCodes.SUCCESS;
@@ -115,7 +115,7 @@ const verifyEvents = async (ctx) => {
     console.log(e);
   }
 };
-function displayNumber() {
+function displayNumber(name='') {
   if (pythonProcess) {
     pythonProcess.kill("SIGKILL");
   }
@@ -127,6 +127,7 @@ function displayNumber() {
     JSON.stringify(CACHE),
     DEVICE_IN_NAME,
     DEVICE_OUT_NAME,
+    name
   ]);
   pythonProcess.stdout.on("data", (data) => {
     console.log(`stdout: ${data}`);

@@ -12,6 +12,7 @@ from luma.led_matrix.device import max7219
 data=json.loads(sys.argv[1])
 device_in=sys.argv[2]
 device_out=sys.argv[3]
+name=sys.argv[4]
 in_count=data[device_in]
 out_count=data[device_out]
 serial =spi(port=0, device=0, gpio=noop())
@@ -25,12 +26,12 @@ def resetCount():
 
 def main():
 	count=f"{abs(in_count-out_count)}"
-	
+	if name:
+		show_message(device,name,fill="white",font=proportional(CP437_FONT),scroll_delay=0.1)	
 	while True:
 		resetButton.when_held=resetCount
 		with canvas(device) as draw:
 			text(draw, (0,0), count, fill="white", font=proportional(CP437_FONT))
-		#show_message(device,count,fill="white",font=proportional(SINCLAIR_FONT),scroll_delay=0.1)
 							       	               							       	               			
 try:	
 	main()
