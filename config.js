@@ -1,2 +1,6 @@
-export const DEVICE_IN_NAME = "192.168.1.66";
-export const DEVICE_OUT_NAME = "192.168.1.64";
+
+
+module.exports={
+DEVICE_IN_NAME:'192.168.1.66',
+DEVICE_OUT_NAME:'192.168.1.138'
+}

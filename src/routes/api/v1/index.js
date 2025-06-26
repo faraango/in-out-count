@@ -10,11 +10,11 @@ app.get("/", (ctx) => {
   ctx.response.status = HttpStatusCodes.SUCCESS;
 });
 
-app.post("/health", (ctx) => {
+app.get("/health", (ctx) => {
   ctx.body = "ok";
   ctx.response.status = HttpStatusCodes.SUCCESS;
 });
 
-module.exports = {
+module.exports = {app,
   hikvision,
 };
