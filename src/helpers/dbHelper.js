@@ -40,7 +40,12 @@ const updateInDetails = async (details) => {
   try {
     const pathName = path.join(__dirname, "in.json");
     const data = JSON.parse(fs.readFileSync(pathName));
+    const keys = Object.keys(data.details);
 
+    if (keys.length >= 10) {
+      const oldestKey = keys[0];
+      delete data.details[oldestKey];
+    }
     data.details = details;
     fs.writeFileSync(pathName, JSON.stringify({ ...data }));
   } catch (err) {
@@ -80,7 +85,12 @@ const updateOutDetails = async (details) => {
   try {
     const pathName = path.join(__dirname, "out.json");
     const data = JSON.parse(fs.readFileSync(pathName));
+    const keys = Object.keys(data.details);
 
+    if (keys.length >= 10) {
+      const oldestKey = keys[0];
+      delete data.details[oldestKey];
+    }
     data.details = details;
     fs.writeFileSync(pathName, JSON.stringify({ ...data }));
   } catch (err) {
